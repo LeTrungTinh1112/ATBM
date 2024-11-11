@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="assets/css/Account.css">
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box" id="login-box">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <input type="text" id="username" name="username" required placeholder="Email">
+                <input type="password" id="password" name="password" required placeholder="Password">
+                <div class="options">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <button type="submit">Đăng nhập</button>
+                <p>Don't have an account? <a href="#" id="register-link">Đăng ký</a></p>
+            </form>
+        </div>
+        <div class="login-box" id="register-box" style="display:none;">
+            <h2>Register</h2>
+            <form action="#" method="POST">
+                <input type="text" id="cccd" name="cccd" required placeholder="CCCD">
+                <input type="text" id="name" name="name" required placeholder="Name">
+                <input type="text" id="phone" name="phone" required placeholder="Phone">
+                <input type="email" id="email" name="email" required placeholder="Email">
+                <input type="number" id="number" name="number" required placeholder="Mã PIN">
+                <input type="password" id="password" name="password" required placeholder="Password">
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm Password">
+                <button type="submit">Đăng ký</button>
+                <p>Already have an account? <a href="#" id="login-link">Đăng nhập</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/Account.js"></script>
+</body>
+</html>

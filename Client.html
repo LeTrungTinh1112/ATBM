@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="assets/css/Client.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/Logo.jpeg" alt="Website Logo">
+            <div class="user-details">
+                <p class="user-name">LÊ TRUNG TÍNH</p>
+                <div class="balance-container">
+                    <input type="password" id="account-balance" value="1000000" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="search-bar">
+            <p><i>Xin chào quý khách !</i></p>
+        </div>
+        <div class="user-info">
+            <img src="assets/avatar.jpg" alt="User Image">
+            <div class="dropdown">
+                <button class="dropbtn">...</button>
+                <div class="dropdown-content">
+                    <a href="#">Thông tin người dùng</a>
+                    <a href="#">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="sidebar">
+            <button id="transfer-button"><b>Chuyển tiền</b></button>
+        </div>
+        <div class="content" id="transfer-form" style="display: none;">
+            <input type="text" placeholder="Số tài khoản">
+            <input type="text" placeholder="Tên người nhận">
+            <input type="number" placeholder="Số tiền">
+            <input type="text" placeholder="Nội dung chuyển khoản">
+            <button id="submit-transfer"><b>Chuyển tiền</b></button>
+            <button id="close-transfer-form"><<<</button>
+        </div>
+        <div class="sidebar-right">
+            <p><b><i>Lịch sử chuyển khoản</i></b></p>
+            <div id="history-panel" style="display: none;">
+            </div>
+
+            <div class="search-content-calendar">
+                <div><input type="text" placeholder="Search..."></div>
+                <div class = "search-content-item-1">
+                <i class="far fa-calendar-alt"></i>
+                <label for="myID"><b>Từ ngày</b></label>
+                <input id="myID" placeholder="yyyy/mm/dd">
+            </div>
+
+            <div class = "search-content-item-2">
+                <i class="far fa-calendar-alt"></i>
+                <label for="myID"><b>Đến ngày</b></label>
+                <input id="myID" placeholder="yyyy/mm/dd">
+            </div>
+            </div>
+        </div>
+        
+        <!-- Popup for password input -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span id="close-popup" class="close">&times;</span>
+                <h2>Nhập Mật Khẩu</h2>
+                <div class="password-input">
+                    <input type="password" maxlength="1" class="circle">
+                    <input type="password" maxlength="1" class="circle">
+                    <input type="password" maxlength="1" class="circle">
+                    <input type="password" maxlength="1" class="circle">
+                    <input type="password" maxlength="1" class="circle">
+                    <input type="password" maxlength="1" class="circle">
+                </div>
+                <button id="confirm-password">Xác nhận</button>
+            </div> 
+               
+        <!-- Popup for OTP input -->
+        <div id="otp-popup" class="popup">
+            <div class="popup-content">
+                <span id="close-otp-popup" class="close">&times;</span>
+                <h2>Nhập OTP</h2>
+                <div class="otp-input">
+                    <input type="text" id="otp" maxlength="6" placeholder="Nhập OTP">
+                </div>
+                <button id="confirm-otp">Xác nhận</button>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/Client.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("#myID", {});
+    </script>
+</body>
+</html>
