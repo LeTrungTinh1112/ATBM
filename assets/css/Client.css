@@ -374,3 +374,28 @@ input[type="number"]:hover {
     background-color: #0056b3;
 }
 
+/* CSS cho table*/
+/* tableStyles.css */
+#MyTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#MyTable th, #MyTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#MyTable th {
+    background-color: #99effe;
+    color: black;
+    text-align: center;
+}
+
+#MyTable tr:hover {
+    background-color: #a5f6fc;
+}
+
+#MyTable td {
+    text-align: center;
+}

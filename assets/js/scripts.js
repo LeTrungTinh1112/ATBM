@@ -28,6 +28,30 @@ function processTopUp() {
     }
 }
 
+function getdata(){
+    const data = {};
+    $.ajax({
+        type: "GET",
+        url: "https://fakestoreapi.com/products",
+        data: data,
+        success: function(res){
+            console.log(res);
+            res.forEach(element => {
+                addRow(element)
+            });
+            }
+      });
+}
+
+function addRow(data){
+    var tableBody = document.getElementById("MyTable"); // Lấy phần thân bảng
+    var row = tableBody.insertRow(); // Thêm hàng vào phần thân bảng
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = data.id;
+    cell2.innerHTML = data.title;
+}
+
 function logout() {
     // Logic đăng xuất
     alert("Đăng xuất thành công.");

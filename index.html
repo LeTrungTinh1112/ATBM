@@ -6,6 +6,7 @@
     <title>Bank Teller - Bank Management System</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/scripts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header>
@@ -31,18 +32,18 @@
                 <button type="button" onclick="filterTransactions()">Lọc</button>
                 <button type="button" onclick="resetFilters()">Đặt lại</button>
             </form>
-            <table>
+            <table id="MyTable">
                 <thead>
-                    <tr>
-                        <th>Mã GD</th>
-                        <th>SĐT Người gửi</th>
-                        <th>SĐT Người nhận</th>
-                        <th>Số tiền</th>
-                        <th>Ngày giao dịch</th>
-                    </tr>
+                <tr>
+                    <th>Mã GD</th>
+                    <th>Người gửi</th>
+                    <th>Người nhận</th>
+                    <th>Số tiền</th>
+                    <th>Ngày giao dịch</th>
+                </tr>
                 </thead>
                 <tbody id="transactionTableBody">
-                    <!-- Dữ liệu giao dịch sẽ hiển thị ở đây -->
+                <!-- Dữ liệu giao dịch sẽ hiển thị ở đây -->
                 </tbody>
             </table>
         </section>
