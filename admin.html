@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Bank Management System</title>
+    <link rel="stylesheet" href="assets/css/admin.css" />
+</head>
+<body>
+    <header>
+        <h1>Admin - Bank Management System</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('customer')">Khách hàng</a></li>
+                <li><a href="#" onclick="showSection('employee')">Nhân viên</a></li>
+                <li><a href="#" onclick="showSection('transactions')">Giao dịch</a></li>
+            </ul>
+            <div class="user-info">
+                <span id="employeeName" class="user-name">Nguyễn Văn A</span>
+                <div class="user-details-container">
+                    <div class="user-details" id="userDetails">
+                        <p><strong>Họ và tên:</strong> Nguyễn Văn A</p>
+                        <p><strong>Mã nhân viên:</strong> NV12345</p>
+                        <p><strong>Ngày sinh:</strong> 01/01/1990</p>
+                        <p><strong>Chức vụ:</strong> Quản lý</p>
+                        <p><strong>Địa chỉ:</strong> 123 Đường ABC, TP. HCM</p>
+                        <button onclick="editPassword()">Đổi mật khẩu</button>
+                    </div>
+                </div>
+                <button onclick="logout()" class="logout-button">Logout</button>
+            </div>   
+        </nav>
+    </header>
+    <main>
+        <!-- Quản lý tài khoản khách hàng -->
+        <section id="customer" class="content-section">
+            <h2>Quản lý tài khoản khách hàng</h2>
+            <form id="customerForm">
+                <input type="text" placeholder="Số điện thoại" required />
+                <input type="password" placeholder="Mật khẩu" required />
+                <input type="text" placeholder="Mã PIN" required />
+                <input type="text" placeholder="Tên khách hàng" required />
+                <button type="submit">Thêm khách hàng</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SĐT</th>
+                        <th>Mật khẩu</th>
+                        <th>Mã PIN</th>
+                        <th>Tên KH</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quản lý tài khoản nhân viên -->
+        <section id="employee" class="content-section">
+            <h2>Quản lý tài khoản nhân viên</h2>
+            <form id="employeeForm">
+                <input type="text" placeholder="Mã nhân viên" required />
+                <input type="text" placeholder="Tên nhân viên" required />
+                <input type="text" placeholder="Số điện thoại" required />
+                <input type="email" placeholder="Email" required />
+                <input type="text" placeholder="Giới tính" required />
+                <input type="text" placeholder="Chức vụ" required />
+                <button type="submit">Thêm nhân viên</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã NV</th>
+                        <th>Tên</th>
+                        <th>SĐT</th>
+                        <th>Email</th>
+                        <th>Giới tính</th>
+                        <th>Chức vụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Xem lịch sử giao dịch -->
+        <section id="transactions" class="content-section">
+            <h2>Lịch sử giao dịch</h2>
+            <form id="transactionFilterForm">
+                <input type="text" id="senderPhone" placeholder="Mã giao dịch hoặc số điện thoại" />
+                <input type="date" id="transactionDate" placeholder="Ngày giao dịch" />
+                <button type="button" onclick="filterTransactions()">Lọc</button>
+                <button type="button" onclick="resetFilters()">Đặt lại</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã GD</th>
+                        <th>SĐT người gửi</th>
+                        <th>Tên người gửi</th>
+                        <th>SĐT người nhận</th>
+                        <th>Tên người nhận</th>
+                        <th>Số tiền</th>
+                        <th>Loại phí</th>
+                        <th>Ngày GD</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <!-- Dữ liệu -->
+                </tbody>
+            </table>
+        </section>
+        <!-- Form Đổi Mật Khẩu -->
+        <div id="change-password-section" style="display: none;">
+            <h2>Đổi Mật Khẩu</h2>
+            <form id="change-password-form">
+                <div>
+                    <label for="full-name">Họ và Tên:</label>
+                    <input type="text" id="full-name" name="full-name" value="Nguyễn Văn A" disabled>
+                </div>
+
+                <div>
+                    <label for="employee-id">Mã Nhân Viên:</label>
+                    <input type="text" id="employee-id" name="employee-id" value="NV123" disabled>
+                </div>
+
+                <div>
+                    <label for="dob">Ngày Tháng Năm Sinh:</label>
+                    <input type="date" id="dob" name="dob" value="1990-01-01" disabled>
+                </div>
+
+                <div>
+                    <label for="position">Chức Vụ:</label>
+                    <input type="text" id="position" name="position" value="Nhân Viên" disabled>
+                </div>
+
+                <div>
+                    <label for="address">Địa Chỉ:</label>
+                    <input type="text" id="address" name="address" value="Hà Nội" disabled>
+                </div>
+
+                <div>
+                    <label for="current-password">Mật Khẩu Hiện Tại:</label>
+                    <input type="password" id="current-password" name="current-password" required>
+                </div>
+
+                <div>
+                    <label for="new-password">Mật Khẩu Mới:</label>
+                    <input type="password" id="new-password" name="new-password" required>
+                </div>
+
+                <div>
+                    <label for="confirm-password">Xác Nhận Mật Khẩu Mới:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+
+                <button type="submit">Đổi Mật Khẩu</button>
+            </form>
+        </div>
+
+    </main>
+
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
