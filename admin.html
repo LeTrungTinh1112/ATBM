@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin - Bank Management System</title>
-    <link rel="stylesheet" href="assets/css/admin.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
 </head>
 <body>
     <header>
@@ -35,20 +35,17 @@
         <!-- Quản lý tài khoản khách hàng -->
         <section id="customer" class="content-section">
             <h2>Quản lý tài khoản khách hàng</h2>
-            <form id="customerForm">
-                <input type="text" placeholder="Số điện thoại" required />
-                <input type="password" placeholder="Mật khẩu" required />
-                <input type="text" placeholder="Mã PIN" required />
-                <input type="text" placeholder="Tên khách hàng" required />
-                <button type="submit">Thêm khách hàng</button>
-            </form>
+            <button onclick="addNewCustomer('add-new-customer')">Thêm khách hàng</button>
             <table>
                 <thead>
-                    <tr>
-                        <th>SĐT</th>
+                    <tr id="nameOfColumn">
+                        <th>Số điện thoại</th>
+                        <th>Tên khách hàng</th>
                         <th>Mật khẩu</th>
                         <th>Mã PIN</th>
-                        <th>Tên KH</th>
+                        <th>Ngày tháng năm sinh</th>
+                        <th>Email</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,24 +57,19 @@
         <!-- Quản lý tài khoản nhân viên -->
         <section id="employee" class="content-section">
             <h2>Quản lý tài khoản nhân viên</h2>
-            <form id="employeeForm">
-                <input type="text" placeholder="Mã nhân viên" required />
-                <input type="text" placeholder="Tên nhân viên" required />
-                <input type="text" placeholder="Số điện thoại" required />
-                <input type="email" placeholder="Email" required />
-                <input type="text" placeholder="Giới tính" required />
-                <input type="text" placeholder="Chức vụ" required />
-                <button type="submit">Thêm nhân viên</button>
-            </form>
+            <button onclick="addNewCustomer('add-new-teller')">Thêm giao dịch viên</button>
             <table>
                 <thead>
                     <tr>
-                        <th>Mã NV</th>
-                        <th>Tên</th>
-                        <th>SĐT</th>
+                        <th>Mã nhân viên</th>
+                        <th>Tên nhân viên</th>
+                        <th>Địa chỉ</th>
+                        <th>Số điện thoại</th>
+                        <th>Mật khẩu</th>
                         <th>Email</th>
                         <th>Giới tính</th>
                         <th>Chức vụ</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -160,9 +152,49 @@
                 <button type="submit">Đổi Mật Khẩu</button>
             </form>
         </div>
+        <div id="add-new-customer" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('add-new-customer')">&times;</span>
+                <form id="customerForm">
+                    <h2>Khách hàng mới</h2>
+                    <input type="text" placeholder="Số điện thoại" required />
+                    <input type="password" placeholder="Mật khẩu" required />
+                    <input type="text" placeholder="Mã PIN" required />
+                    <input type="text" placeholder="Họ và tên" required />
+                    <input type="date" placeholder="Ngày/tháng/năm sinh" required />
+                    <input type="text" placeholder="Email" required />
+                    <div id="user-button">
+                        <button type="submit">Thêm khách hàng</button>
+                    </div>
 
+                </form>
+            </div>
+        </div>
+        <div id="add-new-teller" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup('add-new-teller')">&times;</span>
+                <form id="customerForm">
+                    <h2>Giao dịch viên mới</h2>
+                    <input type="text" placeholder="Mã nhân viên" readonly />
+                    <input type="text" placeholder="Tên nhân viên" required />
+                    <input type="text" placeholder="Địa chỉ" required />
+                    <input type="text" placeholder="Số điện thoại" required />
+                    <input type="password" placeholder="Mật khẩu" required />
+                    <input type="email" placeholder="Email" required />
+                    <div>
+                        <label>Giới tính</label>
+                        <select style="width: 100px;">
+                            <option>Nữ</option>
+                            <option>Nam</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Chức vụ" required />
+                    <button type="submit">Thêm nhân viên</button>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <script src="assets/js/admin.js"></script>
+    <script src="/assets/js/admin.js"></script>
 </body>
 </html>
