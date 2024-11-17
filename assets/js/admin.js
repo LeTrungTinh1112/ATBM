@@ -103,3 +103,22 @@ function initUserDetails() {
 }
 document.addEventListener('DOMContentLoaded', initUserDetails);
 
+function showPopup(idForm) {
+    const form = document.getElementById(idForm);
+    form.style.display = "flex";
+
+    window.onclick = function(event) {
+        if (event.target === form) {
+            closePopup(idForm);
+        }
+    };
+}
+
+function closePopup(idForm) {
+    document.getElementById(idForm).style.display = "none";
+    window.onclick = null; 
+}
+
+function addNewCustomer(idForm) {
+    showPopup(idForm);
+}
