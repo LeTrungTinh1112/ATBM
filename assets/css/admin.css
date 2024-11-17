@@ -42,6 +42,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #004080;
     border-radius: 4px;
+    text-decoration-color: yellow;
 }
 
 main {
@@ -62,24 +63,24 @@ form {
     margin-bottom: 20px;
 }
 
-form input, form button {
+form input, form button , button {
     padding: 10px;
     margin: 5px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.026);
-
 }
 
-form button {
+form button, button {
     background-color: #007bff;
     color: white;
     border: none;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.084);
 }
 
 form button:hover {
     background-color: #0056b3;
+}
+button:hover{
+    background-color:  #0056b3;
 }
 
 table {
@@ -95,6 +96,7 @@ table, th, td {
 }
 
 th {
+    background-color: #f2f2f2;
     color: #333;
 }
 form#transactionFilterForm {
@@ -190,14 +192,13 @@ form#transactionFilterForm input, form#transactionFilterForm button {
 }
 
 .logout-button {
-    background-color: #7eadf9;
+    background-color: #dc3545;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.078);
 }
 
 .logout-button:hover {
@@ -222,4 +223,47 @@ form#transactionFilterForm input, form#transactionFilterForm button {
 .user-details.hovered {
     display: block; 
     background-color: #f0f0f0;
+}
+.popup {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    justify-content: center;
+    align-items: left;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: min-content;
+    max-width: 90%;
+    position: relative;
+    height: fit-content;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+#user-button {
+    grid-column: auto;
+}
+#customerForm {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+#nameOfColumn th{
+    text-align: left;
 }
