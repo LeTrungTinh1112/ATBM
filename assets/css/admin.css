@@ -258,9 +258,11 @@ form#transactionFilterForm input, form#transactionFilterForm button {
 }
 #user-button {
     grid-column: auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 #customerForm {
-    width: 600px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     height: fit-content;
