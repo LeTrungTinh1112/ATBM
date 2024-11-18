@@ -235,17 +235,18 @@ form#transactionFilterForm input, form#transactionFilterForm button {
     justify-content: center;
     align-items: left;
     z-index: 1000;
+    text-align: left;
 }
 
 .popup-content {
     background-color: #fff;
-    padding: 20px;
     border-radius: 8px;
     width: min-content;
     max-width: 90%;
     position: relative;
-    height: fit-content;
-    margin: auto;
+    height: min-content;
+    margin: auto auto;
+    padding: 20px;
 }
 
 .close {
@@ -266,4 +267,9 @@ form#transactionFilterForm input, form#transactionFilterForm button {
 }
 #nameOfColumn th{
     text-align: left;
+}
+.popup-content input {
+    width: 500px;
+    height: 20px;
+    margin-bottom: 10px;
 }
